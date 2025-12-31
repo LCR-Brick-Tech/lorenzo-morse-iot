@@ -1,0 +1,7 @@
+{
+  "name": "Morse Hub",
+  "description": "High-end IoT Morse Code communication platform for Lorenzo using ESP32 and Firebase.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
