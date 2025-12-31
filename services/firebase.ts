@@ -1,4 +1,4 @@
-import * as firebaseApp from 'firebase/app';
+import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged, signOut, User } from 'firebase/auth';
 import { getDatabase, ref, set, push, onValue, serverTimestamp, onDisconnect, off, DatabaseReference } from 'firebase/database';
 
@@ -14,7 +14,7 @@ const firebaseConfig = {
 };
 
 // Initialize
-const app = firebaseApp.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getDatabase(app);
 const googleProvider = new GoogleAuthProvider();

@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+/* Glass UI Component Classes */
+@layer components {
+  .glass-panel {
+    @apply bg-[#1D1D1F]/60 backdrop-blur-[25px] border-[0.5px] border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+  }
+
+  .glass-input {
+    @apply bg-black/20 border-[0.5px] border-white/10 text-white;
+  }
+
+  .glass-btn-primary {
+    @apply bg-[#0066CC]/80 backdrop-blur-[10px] border-[0.5px] border-white/20 shadow-[0_0_15px_rgba(0,102,204,0.4)];
+  }
+
+  .glass-btn-secondary {
+    @apply bg-white/10 backdrop-blur-[10px] border-[0.5px] border-white/10;
+  }
+  
+  .ios-touch {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}

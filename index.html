@@ -4,92 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Morse Hub</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'Inter', 'sans-serif'],
-            },
-            colors: {
-              scienceBlue: '#0066CC',
-              shark: '#1D1D1F',
-              athensGray: '#F5F5F7',
-            },
-            animation: {
-              shake: 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
-              pulseSlow: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            },
-            keyframes: {
-              shake: {
-                '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
-                '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
-                '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
-                '40%, 60%': { transform: 'translate3d(4px, 0, 0)' }
-              }
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        background-color: #000;
-        color: #F5F5F7;
-        overflow: hidden; /* App-like feel */
-      }
-      #root {
-        height: 100vh;
-        width: 100vw;
-      }
-      ::-webkit-scrollbar {
-        width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-      }
-      .glass-panel {
-        background: rgba(29, 29, 31, 0.6);
-        backdrop-filter: blur(25px) saturate(180%);
-        -webkit-backdrop-filter: blur(25px) saturate(180%);
-        border: 0.5px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-      }
-      .glass-input {
-        background: rgba(0, 0, 0, 0.2);
-        border: 0.5px solid rgba(255, 255, 255, 0.1);
-        color: white;
-      }
-      .glass-btn-primary {
-        background: rgba(0, 102, 204, 0.8);
-        backdrop-filter: blur(10px);
-        border: 0.5px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 15px rgba(0, 102, 204, 0.4);
-      }
-      .glass-btn-secondary {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 0.5px solid rgba(255, 255, 255, 0.1);
-      }
-      .ios-touch {
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: transparent;
-      }
-    </style>
   <script type="importmap">
 {
   "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "firebase/": "https://esm.sh/firebase@^12.7.0/",
-    "react/": "https://esm.sh/react@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "firebase/": "https://esm.sh/firebase@^12.7.0/",
     "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
     "vite": "https://esm.sh/vite@^7.3.0",
     "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
@@ -97,8 +19,9 @@
 }
 </script>
 </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+  <body class="bg-black text-[#F5F5F7] overflow-hidden h-screen w-screen">
+    <div id="root" class="h-full w-full"></div>
+    <!-- Vite Entry Point -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
