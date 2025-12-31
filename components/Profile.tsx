@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { UserProfile } from '../types.ts';
+import { UserProfile } from '../types';
 import { updateProfile } from 'firebase/auth';
-import { ref, set, db, auth } from '../services/firebase.ts';
+import { ref, set, db, auth } from '../services/firebase';
 import { X, Save, User, Quote } from 'lucide-react';
 
 interface ProfileProps {

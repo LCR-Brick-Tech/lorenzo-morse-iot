@@ -5,15 +5,15 @@ import {
   createUserWithEmailAndPassword, signOut, onAuthStateChanged, 
   onDisconnect,
   User
-} from './services/firebase.ts';
-import { audioController } from './services/audio.ts';
-import { NavBar } from './components/NavBar.tsx';
-import { Visualizer } from './components/Visualizer.tsx';
-import { MorseKey } from './components/MorseKey.tsx';
-import { CheatSheet } from './components/CheatSheet.tsx';
-import { MessageList } from './components/MessageList.tsx';
-import { Profile } from './components/Profile.tsx';
-import { UserProfile, MorseMessage, MORSE_MAP, SystemHealth } from './types.ts';
+} from './services/firebase';
+import { audioController } from './services/audio';
+import { NavBar } from './components/NavBar';
+import { Visualizer } from './components/Visualizer';
+import { MorseKey } from './components/MorseKey';
+import { CheatSheet } from './components/CheatSheet';
+import { MessageList } from './components/MessageList';
+import { Profile } from './components/Profile';
+import { UserProfile, MorseMessage, MORSE_MAP, SystemHealth } from './types';
 import { Zap, WifiOff, AlertTriangle } from 'lucide-react';
 
 export default function App() {
@@ -110,8 +110,6 @@ export default function App() {
     // Persistent History
     const historyRef = ref(db, 'chat/history');
     // Limit to last 50 for performance
-    // Note: Firebase query limits require query() which is tree-shakeable, 
-    // but for simplicity/code-size constraints we'll slice client side or trust the stream
     const unsubHistory = onValue(historyRef, (snapshot) => {
         const data = snapshot.val();
         if (data) {
@@ -161,7 +159,6 @@ export default function App() {
         }
     } catch (err: any) {
         setAuthError(err.message.replace('Firebase: ', ''));
-        // Trigger shake effect via DOM manipulation or state driven class
         const form = document.getElementById('auth-form');
         form?.classList.add('animate-shake');
         setTimeout(() => form?.classList.remove('animate-shake'), 500);
@@ -201,7 +198,7 @@ export default function App() {
 
   const handleKeyDown = (type: 'dot' | 'dash') => {
     const now = Date.now();
-    // Debounce 50ms (Simulated via ignore if too close)
+    // Debounce 50ms
     if (now - lastSignalTime.current < 50) return;
     lastSignalTime.current = now;
 
@@ -220,9 +217,7 @@ export default function App() {
 
   const handleKeyUp = () => {
     audioController.stopTone();
-    
-    // Set timer to commit character (standard morse gap is 3 dots ~ 200-300ms depending on WPM)
-    // We'll use 600ms for easier typing for beginners
+    // Auto commit char after delay
     charTimeoutTimer.current = setTimeout(() => {
         commitChar();
     }, 800);

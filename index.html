@@ -6,8 +6,6 @@
     <title>Morse Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Babel for in-browser JSX/TSX transformation -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script>
       tailwind.config = {
         darkMode: 'class',
@@ -43,12 +41,10 @@
         color: #F5F5F7;
         overflow: hidden; /* App-like feel */
       }
-      /* Ensure root takes full height for the app container */
       #root {
         height: 100vh;
         width: 100vw;
       }
-      /* Custom scrollbar for glass effect */
       ::-webkit-scrollbar {
         width: 6px;
       }
@@ -90,23 +86,19 @@
   <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react-dom": "https://esm.sh/react-dom@^19.2.3",
-    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
-    "firebase/app": "https://esm.sh/firebase@^12.7.0/app",
-    "firebase/auth": "https://esm.sh/firebase@^12.7.0/auth",
-    "firebase/database": "https://esm.sh/firebase@^12.7.0/database",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "firebase/": "https://esm.sh/firebase@^12.7.0/"
+    "firebase/": "https://esm.sh/firebase@^12.7.0/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
-    <!-- Entry Point Script -->
-    <script type="text/babel" data-type="module" src="./index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

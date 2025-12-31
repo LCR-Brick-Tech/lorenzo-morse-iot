@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { UserProfile, MorseMessage } from '../types.ts';
+import { UserProfile, MorseMessage } from '../types';
 import { Activity, Radio } from 'lucide-react';
 
 interface VisualizerProps {

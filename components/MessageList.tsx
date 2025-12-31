@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { MorseMessage } from '../types.ts';
+import { MorseMessage } from '../types';
 
 interface MessageListProps {
   messages: MorseMessage[];
