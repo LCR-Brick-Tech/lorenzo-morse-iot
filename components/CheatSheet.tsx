@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, BookOpen } from 'lucide-react';
-import { MORSE_MAP } from '../types';
+import { MORSE_MAP } from '../types.ts';
 
 export const CheatSheet: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

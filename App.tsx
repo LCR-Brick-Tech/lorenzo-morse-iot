@@ -5,15 +5,15 @@ import {
   createUserWithEmailAndPassword, signOut, onAuthStateChanged, 
   onDisconnect,
   User
-} from './services/firebase';
-import { audioController } from './services/audio';
-import { NavBar } from './components/NavBar';
-import { Visualizer } from './components/Visualizer';
-import { MorseKey } from './components/MorseKey';
-import { CheatSheet } from './components/CheatSheet';
-import { MessageList } from './components/MessageList';
-import { Profile } from './components/Profile';
-import { UserProfile, MorseMessage, MORSE_MAP, SystemHealth } from './types';
+} from './services/firebase.ts';
+import { audioController } from './services/audio.ts';
+import { NavBar } from './components/NavBar.tsx';
+import { Visualizer } from './components/Visualizer.tsx';
+import { MorseKey } from './components/MorseKey.tsx';
+import { CheatSheet } from './components/CheatSheet.tsx';
+import { MessageList } from './components/MessageList.tsx';
+import { Profile } from './components/Profile.tsx';
+import { UserProfile, MorseMessage, MORSE_MAP, SystemHealth } from './types.ts';
 import { Zap, WifiOff, AlertTriangle } from 'lucide-react';
 
 export default function App() {

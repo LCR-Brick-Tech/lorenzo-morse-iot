@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserProfile } from '../types';
+import { UserProfile } from '../types.ts';
 import { Signal, Wifi, LogOut, Settings } from 'lucide-react';
 
 interface NavBarProps {
